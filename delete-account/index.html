@@ -30,7 +30,7 @@
   <main class="content">
     <p class="eyebrow">Account &amp; data deletion</p>
     <h1 class="page-title">Delete your Sortline account</h1>
-    <p class="meta">Last updated: September 27, 2026</p>
+    <p class="meta">Last updated: October 24, 2026</p>
 
     <section>
       <h2>What this deletes</h2>
@@ -113,33 +113,29 @@
     <section>
       <h2>Data included in the deletion request</h2>
 
-      <p>Depending on which Sortline features you used, deletion may include:</p>
-
+      <p>Depending on the features you used, the Sortline account-erasure process includes:</p>
       <ul class="clean-list">
-        <li>the Sortline / Unity player identity associated with the account;</li>
-
-        <li>
-          leaderboard entries and account-linked leaderboard data associated with that player;
-        </li>
-
-        <li>
-          game progress, settings and other gameplay data stored through Unity Cloud Save;
-        </li>
-
-        <li>
-          other account-linked settings or progress stored online;
-        </li>
-
-        <li>
-          other account-linked user data held by Sortline or its processors within the scope
-          of the request.
-        </li>
+        <li>the Sortline / Unity player identity;</li>
+        <li>leaderboard entries and account-linked ranking data;</li>
+        <li>cloud progress, settings and recovery copies in the Sortline service environments;</li>
+        <li>account-linked purchase, validation and delivery records.</li>
       </ul>
-
       <p>
-        Some limited records may be retained where necessary for legitimate legal, security,
-        fraud-prevention or transaction-record obligations. Any such retention should be limited
-        to what is necessary.
+        It does not delete your Google account, general Google Play Games profile or Google's
+        purchase history, and does not itself issue a refund. Deleting the account can remove
+        records used to restore content, so contact support first if you have a purchase issue.
+      </p>
+      <p>
+        Minimum pseudonymous purchase hashes and scope/date metadata may remain for up to 30 days
+        from the start of erasure, without extending that period on retries. A temporary technical
+        case retains the Unity identifier and references needed to block old sessions and verify
+        completion. After confirmed authentication removal, we wait 65 minutes and target removal
+        in the next maintenance run, with a maximum operational deadline of 24 hours from that
+        confirmation. Incomplete operations are investigated rather than reported as complete.
+      </p>
+      <p>
+        Refund notices without an identifiable account have a separate maximum 30-day period
+        from Google's event date. Details are in the <a href="../privacy/">Privacy Policy</a>.
       </p>
     </section>
 
@@ -147,8 +143,29 @@
       <h2>Processing time</h2>
 
       <p>
-        We aim to confirm and complete valid deletion requests without undue delay and normally within
-        30 days. If we need additional information to identify or verify the account, we will contact you.
+        We aim to confirm and complete valid deletion requests without undue delay and normally
+        within 30 days. We may request limited information to identify and verify your account.
+        This request-handling target does not restart the technical retention periods above.
+      </p>
+      <h3>Historical GameAnalytics data</h3>
+      <p>
+        Collection is disabled in the commercial Android release. Data from earlier installations
+        may still exist with GameAnalytics and requires a separate request. In the game, the
+        usage-statistics settings and GameAnalytics data panel can copy a locally retained SDK
+        identifier or prepare an email to support. You must send the draft yourself. Forgetting
+        the local reference or deleting the Sortline account does not erase provider history.
+      </p>
+      <p>
+        Contact <a href="mailto:sortline.contact@gmail.com">sortline.contact@gmail.com</a> and specify
+        that your request concerns GameAnalytics. If available, include the SDK user identifier;
+        the game is Sortline (GameAnalytics game 353462). If the identifier is unavailable, ask
+        support what can be located. Do not send passwords or payment-card details.
+      </p>
+      <p>
+        We aim to forward a verified historical-data request to GameAnalytics within 24 hours and
+        keep a minimum support case until resolution, for at most 30 days from the request.
+        We escalate unresolved cases before that limit. These are Sortline's support targets;
+        they do not specify the provider's retention or deletion-completion time.
       </p>
     </section>
 
