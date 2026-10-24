@@ -30,7 +30,7 @@
   <main class="content">
     <p class="eyebrow">Sortline</p>
     <h1 class="page-title">Privacy Policy</h1>
-    <p class="meta">Last updated: September 27, 2026</p>
+    <p class="meta">Last updated: October 24, 2026</p>
 
     <section>
       <h2>1. Who is responsible for Sortline?</h2>
@@ -135,14 +135,12 @@
           </tr>
 
           <tr>
-            <td data-label="Feature">Analytics — only if enabled</td>
+            <td data-label="Feature">GameAnalytics — disabled in the commercial Android release</td>
             <td data-label="Data">
-              Game events, session information, device/technical information and
-              performance data configured in the analytics service.
+              That release does not initialize GameAnalytics or send new gameplay, session or purchase statistics to it.
+              Data from an earlier installation may still exist with the provider.
             </td>
-            <td data-label="Purpose">
-              Understand how the game is used, improve balancing and identify technical issues.
-            </td>
+            <td data-label="Purpose">Support for requests concerning historical data.</td>
           </tr>
         </tbody>
       </table>
@@ -159,7 +157,6 @@
         <li>Process and restore in-app purchases.</li>
         <li>Show advertising and apply consent choices where advertising is enabled.</li>
         <li>Detect abuse, cheating, fraud or technical problems.</li>
-        <li>Improve the game using aggregated or gameplay information where analytics is enabled.</li>
         <li>Respond to support, privacy and account-deletion requests.</li>
       </ul>
     </section>
@@ -206,8 +203,13 @@
         </li>
 
         <li>
-          <strong>Analytics provider</strong> — only if analytics is enabled
-          in the released build.
+          <strong>Unity Cloud Code and Google Cloud</strong> — server-side purchase validation,
+          delivery records, recovery, fraud prevention and account-erasure maintenance.
+        </li>
+        <li>
+          <strong>GameAnalytics</strong> — collection is disabled in the commercial Android release.
+          It cannot be enabled in that release through a player preference. Historical data from
+          earlier installations is handled separately from the Sortline account.
         </li>
       </ul>
     </section>
@@ -228,10 +230,17 @@
       <h2>6. Purchases</h2>
 
       <p>
-        In-app purchases are processed through Google Play. Sortline may receive
-        information needed to confirm that a purchase was completed, restore an
-        entitlement or provide purchased content. Sortline does not directly receive
-        your full payment-card details from Google Play.
+        In-app purchases are processed through Google Play. Unity server services and Google Cloud
+        infrastructure validate purchases, maintain delivery and restoration records, and prevent
+        duplicate or fraudulent claims. The records can include the Sortline player identifier,
+        purchase tokens, product identifiers, purchase status and delivery information.
+        Google Play handles payment-card details; Sortline does not receive your full payment-card details.
+      </p>
+      <p>
+        Purchase records are associated with the recoverable Sortline account. Deleting that
+        account removes its account-linked purchase and delivery records through the account-erasure
+        process. It does not delete your Google account or Google's purchase history, or itself issue
+        a refund. Contact support before deleting an account if you have a purchase issue.
       </p>
     </section>
 
@@ -239,19 +248,43 @@
       <h2>7. Data retention</h2>
 
       <p>
-        Account-linked data is kept only for as long as reasonably necessary to provide
-        the relevant feature, maintain account integrity, resolve support issues, prevent
-        abuse or meet applicable legal obligations. Data stored by third-party providers
-        may also be subject to their retention rules and the configuration used by Sortline.
+        While an account or its registered purchase rights remain active, we keep the minimum
+        purchase records needed to deliver and restore those rights, prevent duplicate claims and
+        handle purchase issues. There is no general 30-day expiry for active purchase rights.
+        Other account-linked progress and settings are kept for the relevant feature until erased.
       </p>
-
       <p>
-        When a valid account-deletion request is completed, the Sortline account and
-        associated user data within the scope of the request are deleted. Where service
-        providers process account-linked data for Sortline, we will also request deletion
-        through the controls those providers make available. Limited information may be
-        retained only where necessary for legitimate legal, security, fraud-prevention
-        or transaction-record purposes.
+        When account erasure begins, identifiable purchase and delivery records are removed through
+        that process. Minimum pseudonymous purchase hashes and scope/date metadata may remain for
+        fraud prevention for up to 30 days from the start of erasure. These hashes are not treated
+        as anonymous data. Retries do not restart the period. Cleanup is scheduled to begin on day 29.
+      </p>
+      <p>
+        A temporary technical case retains the Unity identifier and references needed to block
+        old sessions and verify completion. After confirming that the authentication identity is
+        absent, we wait 65 minutes for old sessions to expire and target removal of that case in the
+        next maintenance run, with a maximum operational deadline of 24 hours from that confirmation.
+        If erasure or maintenance fails, we investigate it and do not report incomplete erasure as complete.
+      </p>
+      <p>
+        For a refund notice that cannot be linked to any account, only a minimum purchase hash
+        and scope/date metadata may be kept for up to 30 days from Google's refund-event date.
+        Repeated notices do not renew that period. An older purchase without a verifiable server
+        record may require support review; existing registered rights do not expire on that basis.
+      </p>
+      <p>
+        GameAnalytics history is independent of the Sortline / Unity account. Disabling collection,
+        deleting the Sortline account or forgetting a local identifier does not itself erase that
+        provider's history. For a historical-data request, we aim to forward the minimum necessary
+        game and SDK user identifiers to the provider within 24 hours and keep the minimum support
+        case until resolution, for at most 30 days from the request. We escalate unresolved cases
+        before that limit. This is our support-case period, not a claim about the provider's retention
+        or deletion-completion time.
+      </p>
+      <p>
+        Google Play, advertising services and other providers also process information under their
+        own terms and retention rules. The Sortline purchase-erasure process does not automatically
+        erase Google's transaction history, a Google account or independent advertising/analytics data.
       </p>
     </section>
 
@@ -259,23 +292,25 @@
       <h2>8. Account and data deletion</h2>
 
       <p>
-        You can request deletion from within the game through
-        <strong>Profile → Manage Account → Delete Account</strong>.
+        Request account erasure through <strong>Profile → Manage Account → Delete Account</strong>.
+        This covers the Sortline / Unity identity, cloud progress and recovery copies, leaderboard
+        data and account-linked purchase records within the scope described above.
       </p>
-
       <p>
-        If you no longer have access to the game, use our external deletion page:
-        <a href="../delete-account/">Sortline Account Deletion</a>.
+        If you no longer have the game, use <a href="../delete-account/">Sortline Account Deletion</a>
+        or contact <a href="mailto:sortline.contact@gmail.com">sortline.contact@gmail.com</a>.
+        We verify ownership before removing account data.
       </p>
-
       <p>
-        Account deletion may include cloud-saved gameplay data associated with the
-        Sortline player account.
+        For historical GameAnalytics data, open the usage-statistics settings and its GameAnalytics
+        data panel to copy the locally retained SDK identifier or prepare an email to support.
+        You must send the draft yourself. We do not link that local reference to your Unity identifier.
+        If the reference is unavailable, contact us; we cannot promise to reconstruct an identifier
+        from an older or uninstalled version. Do not send passwords or payment-card details.
       </p>
-
       <p>
-        Deleting your Sortline account does not delete your Google account or your
-        general Google Play Games profile.
+        Deleting Sortline data does not delete your Google account, general Google Play Games profile
+        or Google purchase history. See the separate retention and provider-history limits above.
       </p>
     </section>
 
